@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <div>
+    <p>
+      <span class="square" id="B1">He</span>
+      <span class="word" id="L1">llo</span>
+
+    </p>
+    <p class="second">
+      <span class="square" id="B2">W</span>
+      <span class="word" id="L2">orld</span>
+    </p>
+  </div>
+  <script src="app.js">
+  </script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    first = urlParams.get('first') || 'baking'
+    result1 = generate2(first);
+    document.getElementById('B1').innerHTML = result1.element;
+    document.getElementById('L1').innerHTML = result1.left;
+    second = urlParams.get('second') || 'bread'
+    result2 = generate2(second);
+    document.getElementById('B2').innerHTML = result2.element;
+    document.getElementById('L2').innerHTML = result2.left;
+  </script>
+
+</body>
+
+</html>
