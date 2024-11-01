@@ -1,42 +1,36 @@
 body {
-    background: #2b2b2b;
-    font-weight: normal;
-  }
-  
-  div {
-    margin: 50px 40px;
-  }
-  
-  p {
-    font-family: serif;
-    font-size: 100px;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .second {
-    margin: 0 175px;
-  }
-  
-  .square {
-    font-family: sans-serif;
-    padding:10px;
-    background: green;
-    border: 3px solid #fff;
-    width: 150px;
-    height: 150px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 150px;       /* The same as your div height */
-    display: inline-block;
-  }
-  
-  .word {
-    height: 150px;
-    line-height: 150px;
-    vertical-align: middle;
-    margin-left: -15px;
-  }
-  
-  
+  color: #fff;
+  background: #2b2b2b;
+  font-size: 100px;
+  padding: 20px;
+}
+.square {
+  width: 150px;
+  height: 150px;
+  line-height: 150px;       /* The same as your div height */
+  background: green;
+  text-align: center;
+  vertical-align: middle;
+  font-family: sans-serif;
+  border: 3px solid #fff;
+  display: inline-block;
+}
+
+.name {
+  margin-top: -95px;
+  font-size: 16px;
+}
+
+.symbol {
+}
+
+.second {
+  margin: 0 155px;
+}
+.word {
+  font-family: serif;
+  height: 150px;
+  line-height: 150px;
+  vertical-align: middle;
+  margin-left: -15px;
+}

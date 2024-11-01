@@ -1,25 +1,30 @@
 <!doctype html>
-<html>
+<html class="no-js" lang="">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Baking Bread</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
-  <div>
-    <p>
-      <span class="square" id="B1">He</span>
-      <span class="word" id="L1">llo</span>
 
-    </p>
-    <p class="second">
-      <span class="square" id="B2">W</span>
-      <span class="word" id="L2">orld</span>
-    </p>
+  <div>
+    <div>
+      <div class="square">
+        <div class="symbol" id="Symbol1">He</div>
+        <p class="name" id="Name1">Hydrogen</p>
+      </div>
+      <span class="word" id="Word1">llo</span>
+    </div>
+    <div class="second">
+      <div class="square">
+        <div class="symbol" id="Symbol2">W</div>
+        <p class="name" id="Name2">Hydrogen</p>
+      </div>
+      <span class="word" id="Word2">orld</span>
+    </div>
   </div>
   <script src="app.js">
   </script>
@@ -27,12 +32,14 @@
     const urlParams = new URLSearchParams(window.location.search);
     first = urlParams.get('first') || 'baking'
     result1 = generate2(first);
-    document.getElementById('B1').innerHTML = result1.element;
-    document.getElementById('L1').innerHTML = result1.left;
+    document.getElementById('Symbol1').innerHTML = result1.element;
+    document.getElementById('Name1').innerHTML = result1.name;
+    document.getElementById('Word1').innerHTML = result1.left;
     second = urlParams.get('second') || 'bread'
     result2 = generate2(second);
-    document.getElementById('B2').innerHTML = result2.element;
-    document.getElementById('L2').innerHTML = result2.left;
+    document.getElementById('Symbol2').innerHTML = result2.element;
+    document.getElementById('Name2').innerHTML = result2.name;
+    document.getElementById('Word2').innerHTML = result2.left;
   </script>
 
 </body>
