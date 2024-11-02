@@ -31,14 +31,14 @@
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     first = urlParams.get('first') || 'baking'
-    result1 = generate2(first);
-    document.getElementById('Symbol1').innerHTML = result1.element;
-    document.getElementById('Name1').innerHTML = result1.name;
+    result1 = generateStart(first);
+    document.getElementById('Symbol1').innerHTML = result1.element.symbol;
+    document.getElementById('Name1').innerHTML = result1.element.name;
     document.getElementById('Word1').innerHTML = result1.left;
     second = urlParams.get('second') || 'bread'
-    result2 = generate2(second);
-    document.getElementById('Symbol2').innerHTML = result2.element;
-    document.getElementById('Name2').innerHTML = result2.name;
+    result2 = generateStart(second);
+    document.getElementById('Symbol2').innerHTML = result2.element.symbol;
+    document.getElementById('Name2').innerHTML = result2.element.name;
     document.getElementById('Word2').innerHTML = result2.left;
   </script>
 

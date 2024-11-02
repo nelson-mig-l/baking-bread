@@ -14,3 +14,10 @@ Examples:
 * https://nelson-mig-l.github.io/baking-bread/?first=The&second=Beatles
 
 Just remember the periodic table has a limited number of elements! Not everything will look good.
+
+## Extras
+
+Try also:
+* https://nelson-mig-l.github.io/baking-bread/extra.html?word=bananas
+* https://nelson-mig-l.github.io/baking-bread/extra.html?word=supercar
+* https://nelson-mig-l.github.io/baking-bread/extra.html?word=casino

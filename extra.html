@@ -12,7 +12,8 @@
 <body>
 <div id="parent">
         <div class="square extra" id="template">
-            <div class="symbol">yes</div>
+            <div class="symbol">Y</div>
+            <p class="name" id="Name1">Yes</p>
         </div>
 </div>
 <script src="app.js">
@@ -20,15 +21,16 @@
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     word = urlParams.get('word') || 'carbon'
-    solutions = generate(word);
+    solutions = generateFull(word);
     if (solutions.length > 0) {
         for (let solution of solutions) {
             console.log(solution);
             for (let element of solution.elements) {
-                node = document.getElementById('template').cloneNode(true)
-                node.id = 'Symbol' + element
-                console.log(node.childNodes[1])
-                node.childNodes[1].innerHTML = element
+                const node = document.getElementById('template').cloneNode(true)
+                node.id = 'Symbol' + element.symbol
+                console.log(node.childNodes[3])
+                node.childNodes[1].innerHTML = element.symbol
+                node.childNodes[3].innerHTML = element.name
                 document.getElementById("parent").appendChild(node)
                 // console.log(element);
             }

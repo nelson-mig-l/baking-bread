@@ -1,450 +1,428 @@
-const ELEMENTS = [
-    'Ac', 'Ag', 'Al', 'Am', 'Ar', 'As', 'At', 'Au',
-    'B', 'Ba', 'Be', 'Bh', 'Bi', 'Bk', 'Br',
-    'C', 'Ca', 'Cd', 'Ce', 'Cf', 'Cl', 'Cm', 'Cn', 'Co', 'Cr', 'Cs', 'Cu',
-    'Db', 'Ds', 'Dy',
-    'Er', 'Es', 'Eu',
-    'F', 'Fe', 'Fl', 'Fm', 'Fr',
-    'Ga', 'Gd', 'Ge',
-    'H', 'He', 'Hf', 'Hg', 'Ho', 'Hs',
-    'I', 'In', 'Ir',
-    'K', 'Kr',
-    'La', 'Li', 'Lr', 'Lu', 'Lv',
-    'Mc', 'Md', 'Mg', 'Mn', 'Mo', 'Mt',
-    'N', 'Na', 'Nb', 'Nd', 'Ne', 'Nh', 'Ni', 'No', 'Np',
-    'O', 'Og', 'Os',
-    'P', 'Pa', 'Pb', 'Pd', 'Pm', 'Po', 'Pr', 'Pt', 'Pu',
-    'Ra', 'Rb', 'Re', 'Rf', 'Rg', 'Rh', 'Rn', 'Ru',
-    'S', 'Sb', 'Sc', 'Se', 'Sg', 'Si', 'Sm', 'Sn', 'Sr',
-    'Ta', 'Tb', 'Tc', 'Te', 'Th', 'Ti', 'Tl', 'Tm', 'Ts',
-    'U',
-    'V',
-    'W',
-    'Xe',
-    'Y', 'Yb',
-    'Zn', 'Zr'
-  ];
-  
-  PERIODIC_TABLE = {
-    "H": {
+PERIODIC_TABLE = {
+  "H": {
       "name": "Hydrogen"
-    },
-    "He": {
+  },
+  "He": {
       "name": "Helium"
-    },
-    "Li": {
+  },
+  "Li": {
       "name": "Lithium"
-    },
-    "Be": {
+  },
+  "Be": {
       "name": "Beryllium"
-    },
-    "B": {
+  },
+  "B": {
       "name": "Boron"
-    },
-    "C": {
+  },
+  "C": {
       "name": "Carbon"
-    },
-    "N": {
+  },
+  "N": {
       "name": "Nitrogen"
-    },
-    "O": {
+  },
+  "O": {
       "name": "Oxygen"
-    },
-    "F": {
+  },
+  "F": {
       "name": "Fluorine"
-    },
-    "Ne": {
+  },
+  "Ne": {
       "name": "Neon"
-    },
-    "Na": {
+  },
+  "Na": {
       "name": "Sodium"
-    },
-    "Mg": {
+  },
+  "Mg": {
       "name": "Magnesium"
-    },
-    "Al": {
+  },
+  "Al": {
       "name": "Aluminium"
-    },
-    "Si": {
+  },
+  "Si": {
       "name": "Silicon"
-    },
-    "P": {
+  },
+  "P": {
       "name": "Phosphorus"
-    },
-    "S": {
+  },
+  "S": {
       "name": "Sulfur"
-    },
-    "Cl": {
+  },
+  "Cl": {
       "name": "Chlorine"
-    },
-    "Ar": {
+  },
+  "Ar": {
       "name": "Argon"
-    },
-    "K": {
+  },
+  "K": {
       "name": "Potassium"
-    },
-    "Ca": {
+  },
+  "Ca": {
       "name": "Calcium"
-    },
-    "Sc": {
+  },
+  "Sc": {
       "name": "Scandium"
-    },
-    "Ti": {
+  },
+  "Ti": {
       "name": "Titanium"
-    },
-    "V": {
+  },
+  "V": {
       "name": "Vanadium"
-    },
-    "Cr": {
+  },
+  "Cr": {
       "name": "Chromium"
-    },
-    "Mn": {
+  },
+  "Mn": {
       "name": "Manganese"
-    },
-    "Fe": {
+  },
+  "Fe": {
       "name": "Iron"
-    },
-    "Co": {
+  },
+  "Co": {
       "name": "Cobalt"
-    },
-    "Ni": {
+  },
+  "Ni": {
       "name": "Nickel"
-    },
-    "Cu": {
+  },
+  "Cu": {
       "name": "Copper"
-    },
-    "Zn": {
+  },
+  "Zn": {
       "name": "Zinc"
-    },
-    "Ga": {
+  },
+  "Ga": {
       "name": "Gallium"
-    },
-    "Ge": {
+  },
+  "Ge": {
       "name": "Germanium"
-    },
-    "As": {
+  },
+  "As": {
       "name": "Arsenic"
-    },
-    "Se": {
+  },
+  "Se": {
       "name": "Selenium"
-    },
-    "Br": {
+  },
+  "Br": {
       "name": "Bromine"
-    },
-    "Kr": {
+  },
+  "Kr": {
       "name": "Krypton"
-    },
-    "Rb": {
+  },
+  "Rb": {
       "name": "Rubidium"
-    },
-    "Sr": {
+  },
+  "Sr": {
       "name": "Strontium"
-    },
-    "Y": {
+  },
+  "Y": {
       "name": "Yttrium"
-    },
-    "Zr": {
+  },
+  "Zr": {
       "name": "Zirconium"
-    },
-    "Nb": {
+  },
+  "Nb": {
       "name": "Niobium"
-    },
-    "Mo": {
+  },
+  "Mo": {
       "name": "Molybdenum"
-    },
-    "Tc": {
+  },
+  "Tc": {
       "name": "Technetium"
-    },
-    "Ru": {
+  },
+  "Ru": {
       "name": "Ruthenium"
-    },
-    "Rh": {
+  },
+  "Rh": {
       "name": "Rhodium"
-    },
-    "Pd": {
+  },
+  "Pd": {
       "name": "Palladium"
-    },
-    "Ag": {
+  },
+  "Ag": {
       "name": "Silver"
-    },
-    "Cd": {
+  },
+  "Cd": {
       "name": "Cadmium"
-    },
-    "In": {
+  },
+  "In": {
       "name": "Indium"
-    },
-    "Sn": {
+  },
+  "Sn": {
       "name": "Tin"
-    },
-    "Sb": {
+  },
+  "Sb": {
       "name": "Antimony"
-    },
-    "Te": {
+  },
+  "Te": {
       "name": "Tellurium"
-    },
-    "I": {
+  },
+  "I": {
       "name": "Iodine"
-    },
-    "Xe": {
+  },
+  "Xe": {
       "name": "Xenon"
-    },
-    "Cs": {
+  },
+  "Cs": {
       "name": "Cesium"
-    },
-    "Ba": {
+  },
+  "Ba": {
       "name": "Barium"
-    },
-    "La": {
+  },
+  "La": {
       "name": "Lanthanum"
-    },
-    "Ce": {
+  },
+  "Ce": {
       "name": "Cerium"
-    },
-    "Pr": {
+  },
+  "Pr": {
       "name": "Praseodymium"
-    },
-    "Nd": {
+  },
+  "Nd": {
       "name": "Neodymium"
-    },
-    "Pm": {
+  },
+  "Pm": {
       "name": "Promethium"
-    },
-    "Sm": {
+  },
+  "Sm": {
       "name": "Samarium"
-    },
-    "Eu": {
+  },
+  "Eu": {
       "name": "Europium"
-    },
-    "Gd": {
+  },
+  "Gd": {
       "name": "Gadolinium"
-    },
-    "Tb": {
+  },
+  "Tb": {
       "name": "Terbium"
-    },
-    "Dy": {
+  },
+  "Dy": {
       "name": "Dysprosium"
-    },
-    "Ho": {
+  },
+  "Ho": {
       "name": "Holmium"
-    },
-    "Er": {
+  },
+  "Er": {
       "name": "Erbium"
-    },
-    "Tm": {
+  },
+  "Tm": {
       "name": "Thulium"
-    },
-    "Yb": {
+  },
+  "Yb": {
       "name": "Ytterbium"
-    },
-    "Lu": {
+  },
+  "Lu": {
       "name": "Lutetium"
-    },
-    "Hf": {
+  },
+  "Hf": {
       "name": "Hafnium"
-    },
-    "Ta": {
+  },
+  "Ta": {
       "name": "Tantalum"
-    },
-    "W": {
+  },
+  "W": {
       "name": "Tungsten"
-    },
-    "Re": {
+  },
+  "Re": {
       "name": "Rhenium"
-    },
-    "Os": {
+  },
+  "Os": {
       "name": "Osmium"
-    },
-    "Ir": {
+  },
+  "Ir": {
       "name": "Iridium"
-    },
-    "Pt": {
+  },
+  "Pt": {
       "name": "Platinum"
-    },
-    "Au": {
+  },
+  "Au": {
       "name": "Gold"
-    },
-    "Hg": {
+  },
+  "Hg": {
       "name": "Mercury"
-    },
-    "Tl": {
+  },
+  "Tl": {
       "name": "Thallium"
-    },
-    "Pb": {
+  },
+  "Pb": {
       "name": "Lead"
-    },
-    "Bi": {
+  },
+  "Bi": {
       "name": "Bismuth"
-    },
-    "Po": {
+  },
+  "Po": {
       "name": "Polonium"
-    },
-    "At": {
+  },
+  "At": {
       "name": "Astatine"
-    },
-    "Rn": {
+  },
+  "Rn": {
       "name": "Radon"
-    },
-    "Fr": {
+  },
+  "Fr": {
       "name": "Francium"
-    },
-    "Ra": {
+  },
+  "Ra": {
       "name": "Radium"
-    },
-    "Ac": {
+  },
+  "Ac": {
       "name": "Actinium"
-    },
-    "Th": {
+  },
+  "Th": {
       "name": "Thorium"
-    },
-    "Pa": {
+  },
+  "Pa": {
       "name": "Protactinium"
-    },
-    "U": {
+  },
+  "U": {
       "name": "Uranium"
-    },
-    "Np": {
+  },
+  "Np": {
       "name": "Neptunium"
-    },
-    "Pu": {
+  },
+  "Pu": {
       "name": "Plutonium"
-    },
-    "Am": {
+  },
+  "Am": {
       "name": "Americium"
-    },
-    "Cm": {
+  },
+  "Cm": {
       "name": "Curium"
-    },
-    "Bk": {
+  },
+  "Bk": {
       "name": "Berkelium"
-    },
-    "Cf": {
+  },
+  "Cf": {
       "name": "Californium"
-    },
-    "Es": {
+  },
+  "Es": {
       "name": "Einsteinium"
-    },
-    "Fm": {
+  },
+  "Fm": {
       "name": "Fermium"
-    },
-    "Md": {
+  },
+  "Md": {
       "name": "Mendelevium"
-    },
-    "No": {
+  },
+  "No": {
       "name": "Nobelium"
-    },
-    "Lr": {
+  },
+  "Lr": {
       "name": "Lawrencium"
-    },
-    "Rf": {
+  },
+  "Rf": {
       "name": "Rutherfordium"
-    },
-    "Db": {
+  },
+  "Db": {
       "name": "Dubnium"
-    },
-    "Sg": {
+  },
+  "Sg": {
       "name": "Seaborgium"
-    },
-    "Bh": {
+  },
+  "Bh": {
       "name": "Bohrium"
-    },
-    "Hs": {
+  },
+  "Hs": {
       "name": "Hassium"
-    },
-    "Mt": {
+  },
+  "Mt": {
       "name": "Meitnerium"
-    },
-    "Ds": {
+  },
+  "Ds": {
       "name": "Darmstadtium"
-    },
-    "Rg": {
+  },
+  "Rg": {
       "name": "Roentgenium"
-    },
-    "Cn": {
+  },
+  "Cn": {
       "name": "Copernicium"
-    },
-    "Nh": {
+  },
+  "Nh": {
       "name": "Nihonium"
-    },
-    "Fl": {
+  },
+  "Fl": {
       "name": "Flerovium"
-    },
-    "Mc": {
+  },
+  "Mc": {
       "name": "Moscovium"
-    },
-    "Lv": {
+  },
+  "Lv": {
       "name": "Livermorium"
-    },
-    "Ts": {
+  },
+  "Ts": {
       "name": "Tennessine"
-    },
-    "Og": {
+  },
+  "Og": {
       "name": "Oganesson"
-    },
-    "Uue": {
+  },
+  "Uue": {
       "name": "Ununennium"
-    }
   }
-  
-  class Solution {
-    constructor(left, elements) {
+}
+
+class Element {
+  constructor(name, symbol) {
+      this.name = name;
+      this.symbol = symbol;
+  }
+}
+
+class Solution {
+  constructor(left, elements) {
       this.left = left;
       this.elements = elements;
-    }
   }
-  
-  // const word = readline().toLowerCase();
-  
-  class Result {
-    constructor(element, left, name) {
+}
+
+class Result {
+  constructor(element, left) {
       this.element = element;
-      this.name = name;
       this.left = left;
-    }
   }
-  
-  function generate2(word) {
-    word = word.toLowerCase();
-    let result = new Result('', word);
-    for (const element of Object.keys(PERIODIC_TABLE)) {
-      if (word.startsWith(element.toLowerCase())) {
-        if (element.length > result.element.length) {
-          result = new Result(element, word.substring(element.length), PERIODIC_TABLE[element].name);
-        }
+}
+
+function generateStart(word) {
+  word = word.toLowerCase();
+  let result = new Result(new Element('', ''), word);
+  for (const symbol of Object.keys(PERIODIC_TABLE)) {
+      if (word.startsWith(symbol.toLowerCase())) {
+          if (symbol.length > result.element.symbol.length) {
+              const element = new Element(PERIODIC_TABLE[symbol].name, symbol);
+              result = new Result(element, word.substring(symbol.length));
+          }
       }
-    }
-    return result
   }
-  
-  function generate(word) {
-    const stack = [];
-    const solutions = [];
-    stack.push(new Solution(word.toLowerCase(), []))
-  
-    while (stack.length) {
+  return result
+}
+
+function generateFull(word) {
+  const stack = [];
+  const solutions = [];
+  stack.push(new Solution(word.toLowerCase(), []))
+
+  while (stack.length) {
       const current = stack.pop();
       if (!current.left.length) {
-        solutions.push(current);
-        continue;
+          solutions.push(current);
+          continue;
       }
-      for (const element of Object.keys(PERIODIC_TABLE)) {
-        if (current.left.startsWith(element.toLowerCase())) {
-          const left = current.left.substring(element.length);
-          const next = new Solution(left, current.elements.concat([element]));
-          stack.push(next);
-        }
+      for (const symbol of Object.keys(PERIODIC_TABLE)) {
+          if (current.left.startsWith(symbol.toLowerCase())) {
+              const left = current.left.substring(symbol.length);
+              const element = new Element(PERIODIC_TABLE[symbol].name, symbol);
+              const next = new Solution(left, current.elements.concat([element]));
+              stack.push(next);
+          }
       }
-    }
-  
-    if (solutions.length) {
+  }
+
+  if (solutions.length) {
       solutions.sort();
       solutions.reverse();
       for (const solution of solutions) {
-        console.error(solution.elements);
-        console.log(solution.elements.join(''));
+          console.error(solution.elements);
+          console.log(solution.elements.join(''));
       }
-    } else {
+  } else {
       console.log('none');
-    }
-    return solutions;
   }
-  
+  return solutions;
+}
