@@ -34,3 +34,10 @@ body {
   vertical-align: middle;
   margin-left: -15px;
 }
+
+.extra {
+  margin: 10px;
+}
+#template {
+  display: none;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<div id="parent">
+        <div class="square extra" id="template">
+            <div class="symbol">yes</div>
+        </div>
+</div>
+<script src="app.js">
+</script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    word = urlParams.get('word') || 'carbon'
+    solutions = generate(word);
+    if (solutions.length > 0) {
+        for (let solution of solutions) {
+            console.log(solution);
+            for (let element of solution.elements) {
+                node = document.getElementById('template').cloneNode(true)
+                node.id = 'Symbol' + element
+                console.log(node.childNodes[1])
+                node.childNodes[1].innerHTML = element
+                document.getElementById("parent").appendChild(node)
+                // console.log(element);
+            }
+            document.getElementById("parent").appendChild(document.createElement("br"))
+        }
+    } else {
+        console.log("Nope!")
+    }
+</script>
+
+</body>
+
+</html>

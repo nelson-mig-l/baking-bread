@@ -426,7 +426,7 @@ const ELEMENTS = [
         solutions.push(current);
         continue;
       }
-      for (const element of ELEMENTS) {
+      for (const element of Object.keys(PERIODIC_TABLE)) {
         if (current.left.startsWith(element.toLowerCase())) {
           const left = current.left.substring(element.length);
           const next = new Solution(left, current.elements.concat([element]));
